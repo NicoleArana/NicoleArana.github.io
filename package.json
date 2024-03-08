@@ -1,6 +1,5 @@
 {
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "tailwindcss": "^1.9.6"
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
   }
 }

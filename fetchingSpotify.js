@@ -54,7 +54,7 @@ async function chatGptRequest(prompt) {
   return json.choices[0].message.content;
 }
 
-async function bttnClicked() {
+async function bttnClicked(artistJson) {
   const artistList = artistJson.artists.items.map((item, index) => {
     return {
       artistName: item.name,
@@ -85,7 +85,7 @@ const server = http.createServer(async function (sol, res) {
   const json = await authReq();
   const access_token = json.access_token;
   const artistJson = await getArtist(access_token);
-  const resChatGpt = await bttnClicked();
+  const resChatGpt = await bttnClicked(artistJson);
 
   res.write(JSON.stringify(resChatGpt, null, 2));
   console.log("202");

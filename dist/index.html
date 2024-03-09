@@ -5,15 +5,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&family=Roboto&display=swap"
+        rel="stylesheet">
+    <script src="./index.js"></script>
+
 
 </head>
 
 <body>
-    <h1 class="text-red-500 text-9xl font-bold underline">
-        Hello world!
-    </h1>
+    <div class="bg-teal-500 w-full py-12 px-10 flex items-center space-x-20">
 
-    <script src="./index.js"></script>
+        <Image src="./logo.png" width="20%" height="py-12 " alt="A&N tutorials" />
+
+        <div class="flex items-center space-x-10 ">
+            <h1 class="text-white text-2xl font-nunito font-medium">Spotify API</h1>
+            <h1 class="text-white text-2xl font-nunito font-medium">
+                </h1class>OpenAI API</h1>
+            <h1 class="text-white text-2xl font-nunito font-medium">WhatsApp API</h1>
+
+        </div>
+    </div>
+
+    <h1 class="pt-28 font-nunito font-extrabold text-6xl text-center ">TUTORIAL: Usando Node.js y APIs</h1>
+
+    <main class="pt-28">
+
+        <section class="px-24" id="introduccion">
+            <h2 class="text-black text-4xl font-nunito font-bold pb-10">Introducción</h2>
+            <!-- Contenido de la introducción -->
+            <hr />
+
+            <p class="pt-10 text-black pl-10 pr-10 text-2xl font-nunito font-normal text-justify pb-16">Bienvenidos al
+                tutorial sobre el
+                uso
+                de Node.js para
+                consumir servicios web. En este tutorial, exploraremos cómo utilizar una variedad de tecnologías y APIs
+                para crear aplicaciones web interactivas y
+                dinámicas. El objetivo principal de este tutorial es
+                proporcionar a los desarrolladores una comprensión sólida de
+                cómo integrar y utilizar diferentes tecnologías para consumir servicios web. A lo largo de este
+                tutorial, aprenderemos a utilizar Node.js, Tailwind CSS, HTML, JavaScript, así como las APIs de OpenAI,
+                Spotify y WhatsApp.</p>
+
+
+            <ul class=" pl-28 pb-44 space-y-6 list-disc">
+                <li class="text-2xl font-nunito font-normal"><strong>Node.js:</strong> Un entorno de tiempo de
+                    ejecución de JavaScript que nos permite ejecutar
+                    código JavaScript del lado del servidor.</li>
+                <li class="text-2xl font-nunito font-normal"><strong>Tailwind CSS:</strong> Un framework CSS altamente
+                    personalizable que nos permite diseñar
+                    interfaces de usuario modernas y receptivas.</li>
+                <li class="text-2xl font-nunito font-normal"><strong>HTML:</strong> El lenguaje de marcado estándar
+                    para crear páginas web.</li>
+                <li class="text-2xl font-nunito font-normal"><strong>JavaScript:</strong> El lenguaje de programación
+                    que nos permite agregar interactividad y
+                    funcionalidad a nuestras aplicaciones web.</li>
+                <li class="text-2xl font-nunito font-normal"><strong>OpenAI's API:</strong> Proporciona herramientas y
+                    modelos de inteligencia artificial para
+                    procesar y generar texto de manera natural.</li>
+                <li class="text-2xl font-nunito font-normal"><strong>- Spotify's API:</strong> Permite acceder a una
+                    amplia gama de datos relacionados con la
+                    música, incluidos artistas, canciones y álbumes.</li>
+                <li class="text-2xl font-nunito font-normal"><strong>- WhatsApp's API:</strong> Permite la integración
+                    de
+                    WhatsApp con aplicaciones externas, lo
+                    que permite enviar mensajes y recibir notificaciones a través de la plataforma de mensajería.</li>
+            </ul>
+
+
+        </section>
+
+        <section class="px-24 " id="nodejs">
+            <h2 class="text-black text-4xl font-nunito font-bold pb-10">Node.js</h2>
+            <hr />
+            <p class="pt-7 pl-10 pr-10  text-black text-2xl font-nunito font-normal text-justify pb-16">Node.js es un
+                entorno de
+                ejecución para JavaScript fuera del navegador. Es ideal para construir
+                aplicaciones rápidas y escalables debido a su naturaleza asincrónica y orientada a eventos. Descubre
+                cómo Node.js se ha convertido en una opción popular para desarrolladores que desean construir
+                aplicaciones web y servicios eficientes.</p>
+
+            <h2 class="pl-20 font-nunito font-semibold text-black text-4xl opacity-70 pb-10 ">Instalacion</h2>
+            <hr class="max-w-[1500px]" />
+
+            <ul class="pt-7 pl-24 pb-20 list-decimal">
+                <li class="font-nunito text-2xl font-semibold text-black opacity-70">Visita <a
+                        href="https://nodejs.org/" target="_blank" style="color: blue">Node.js</a> </li>
+                <li class="font-nunito text-2xl font-semibold text-black opacity-70">Descarga el instalador LTS
+                    (recomendado).
+                </li>
+                <li class="font-nunito text-2xl font-semibold text-black opacity-70">Ejecuta el instalador y sigue las
+                    instrucciones.</li>
+            </ul>
+            <p></p>
+        </section>
+
+        <section class="px-24" id="api">
+            <h2 class="text-black text-4xl font-nunito font-bold pb-10">¿Qué es un API?</h2>
+            <hr />
+            <p class="pt-7 text-black text-2xl font-nunito font-normal text-justify pb-16">Aprende los
+                fundamentos de las Interfaces de Programación de Aplicaciones (API) y cómo actúan como puntos
+                de conexión que permiten que diferentes aplicaciones se comuniquen entre sí. Descubre cómo las API son
+                esenciales para el desarrollo de aplicaciones modernas y cómo facilitan la interacción entre servicios
+                web.</p>
+        </section>
+
+        <section class="px-24" id="http verbos">
+            <h2>Conceptos básicos de solicitudes HTTP: GET y POST</h2>
+            <p>Los verbos GET y POST son dos de los métodos más comunes utilizados en el protocolo HTTP para la
+                comunicación entre clientes y servidores web. Aunque tienen propósitos diferentes, comparten varias
+                características fundamentales que los hacen indispensables en el desarrollo web.
+            </p>
+
+            <!-- Contenido sobre solicitudes HTTP -->
+
+
+        </section>
+
+        <section id="framework">
+            <h2>Framework CSS: [Tailwind]</h2>
+            <!-- Contenido sobre el framework CSS -->
+        </section>
+
+        <section id="spotify">
+            <h2>Configuración de Spotify API</h2>
+            <p>Aprende a configurar la API de Spotify para acceder a datos relacionados con música. Descubre cómo
+                obtener credenciales de API y configurar tu entorno de desarrollo para interactuar con la basta
+                colección de datos proporcionada por Spotify.</p>
+            <p>1. Visita <a href="https://developer.spotify.com/documentation/web-api" target="_blank"
+                    style="color: blue">Spotify for Developers</a> </p>
+            <p>2. Crea una app</p>
+            <p>3. Obten tu "CLIENT ID" y "CLIENT SECRET" e incluyelas en un archivo .env</p>
+            <p>4. Implementacion de la Función de Autenticación</p>
+            <p>4.1 Configura 'dotenv'</p>
+            <img src="./dist/dotenv.png">
+            <p>4.2 Implementa la Función de Autenticación</p>
+            <p>Crea una función para autenticarse con la API de Spotify y obtener un token de acceso</p>
+            <img src="./dist/autheication">
+            <p>5. Implementa la Función de Búsqueda de Artistas </p>
+            <p>Crea una función para realizar una búsqueda de artistas en la API de Spotify utilizando el token de
+                acceso obtenido</p>
+            <img src="./dist/getartist">
+            <p>6. Utiliza las Funciones en tu Aplicación</p>
+            <p>Llama a las funciones en tu aplicación para obtener el token de acceso y realizar una búsqueda de
+                artistas.</p>
+        </section>
+
+        <section id="spotify">
+            <h2>Configuración de OpenAI API</h2>
+
+        </section>
+
 </body>
 
 </html>

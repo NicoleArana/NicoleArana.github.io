@@ -32,8 +32,7 @@ async function chatGptRequest(prompt) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization:
-        "Bearer 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",
+      Authorization: `${process.env.OPENAI_API_KEY}`,
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
@@ -79,7 +78,32 @@ async function bttnClicked(artistJson) {
   return res.json();
 }
 
-// async function sendWhats() {}
+async function sendWhats(message) {
+  const access_token = `${process.env.WHATSAPPS_ACCESS_TOKEN}`;
+  const res = await fetch(
+    "https://graph.facebook.com/v18.0/245648108634989/messages",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + access_token,
+      },
+      body: JSON.stringify({
+        messaging_product: "whatsapp",
+        to: "3318729155",
+        type: "template",
+        template: {
+          name: "hello_world",
+          language: {
+            code: "en_US",
+          },
+        },
+      }),
+    }
+  );
+
+  return res.json();
+}
 
 const server = http.createServer(async function (sol, res) {
   const json = await authReq();

@@ -248,7 +248,7 @@
             <h2 class="text-4xl font-nunito font-bold pb-10">Configuración de OpenAI API</h2>
             <hr />
             <p class=" pt-7 pl-10 pr-10 text-2xl font-nunito font-normal pb-4">En este tutorial, exploraremos cómo
-                utilizar la API de OpenAI GPT para generar insultos creativos basados
+                utilizar la API de OpenAI GPT para generar roasts creativos basados
                 en las canciones más escuchadas de un usuario en Spotify. El objetivo es crear un chatbot que interactúe
                 con las preferencias musicales del usuario y proporcione insultos entretenidos e imaginativos.</p>
 
@@ -256,25 +256,38 @@
                 <li class="font-nunito text-2xl font-normal text-black">1. Registrarse en la API de <a
                         href="https://openai.com/blog/openai-api" target="_blank" style="color: blue">OpenAI GPT</a>
                 </li>
-                <li class="font-nunito text-2xl font-normal text-black">2. Obten tus claves de tu api</li>
+                <li class="font-nunito text-2xl font-normal text-black">2. Obten tu secret key para acceder al api de
+                    OpenAI y agregala a tus enviroment variables en tu archivo .env</li>
                 <li class="font-nunito text-2xl font-normal text-black">3. Implementa la funcion 'chatGptRequest', esta
                     función envía un mensaje a la API de OpenAI GPT para obtener una respuesta basada en el prompt
                     proporcionado y devuelve el contenido del mensaje generado por el modelo.</li>
                 <img class="mt-6 mb-6 rounded-xl" src="/dist/gptRequest.png">
+                <li class="font-nunito text-2xl font-normal text-black">6. Llama a esta funcion dentro de tu servidor
+                    en node.js y espera su respuesta</li>
+                <img class="mt-6 mb-6 rounded-xl" src="/dist/serverCalls.png">
+            </ul>
             </ul>
         </section>
 
-        <section id="WhatsApp">
-            <h2>Configuración de WhatsApp API</h2>
-            <p>En este tutorial explraremos como utilizar el API de WhatsApp para poder enviar a un numero el mensaje
-                que ChatGPT nos a dado sobre el roasting de las canciones</p>
-            <h3>Pasos</h3>
-            <p>1. Crea una cuenta de <a href="https://developers.facebook.com/?" target="_blank"
-                    style="color: blue">desarrollador de Meta</a></p>
-            <p>2. Añadir producto de WhatsApp a la applicacion</p>
+        <section class="pb-10 pt-7 px-24 py-10" id="WhatsApp">
+            <h2 class="text-4xl font-nunito font-bold pb-10">Configuración de WhatsApp API</h2>
+            <hr />
+            <p class=" pt-7 pl-10 pr-10 text-2xl font-nunito font-normal pb-4">En este tutorial explraremos como
+                utilizar el API de WhatsApp para poder enviar a un numero el mensaje
+                que ChatGPT nos a dado sobre el roasting de las canciones.</p>
+
+            <ul class="pt-7 pl-28 pb-20">
+                <li class="font-nunito text-2xl font-normal text-black">1. Crea una cuenta de <a
+                        href="https://developers.facebook.com/?" target="_blank" style="color: blue">desarrollador de
+                        Meta</a>
+                </li>
+                <li class="font-nunito text-2xl font-normal text-black">2. Obten tu access token para acceder al api de
+                    WhatsApp y agregala a tus enviroment variables en tu archivo .env</li>
+                <li class="font-nunito text-2xl font-normal text-black">3. Añadir producto de WhatsApp a la applicacion
+                </li>
+                <!-- <img class="mt-6 mb-6 rounded-xl" src="/dist/gptRequest.png"> -->
+            </ul>
         </section>
-
-
 </body>
 
 </html>
